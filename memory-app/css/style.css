@@ -1,3 +1,29 @@
 body {
     background-color: bisque;
 }
+div {
+
+}
+#container {
+    width: 70%;
+    height: 400px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: space-around;
+    align-items: center;
+
+}
+.gameCard {
+    width: 12%;
+    margin: 1.5%;
+    height: 100px;
+    border-radius: 5%;
+
+}
+.matchCard {
+    width: 150px;
+    height: 150px;
+    border-radius: 5%;
+}

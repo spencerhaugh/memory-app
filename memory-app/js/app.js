@@ -2,7 +2,8 @@
 
 // BASIC GAME SETUP:
 // create colorArray
-// create game cards (18 cards, each with a random color from colorArray, and populate the currentGameColors array)
+// create startGame() to create game cards (18 cards, each with a random color from colorArray[], and also populate the currentGameColors array with these choices)
+// create consts for highScore and currentStreak
 
 let colorArray = [
     '#DC143C',
@@ -50,8 +51,8 @@ let colorArray = [
 
 let currentGameColors = [];
 
-
-
+let currentStreak = 0;
+let highScore = 0;
 
 const makeCards = () => {
     
@@ -60,14 +61,30 @@ const makeCards = () => {
 const startGame = () => {
     for (i = 0; i < 18; i++) {
         let colorPicker = Math.floor(Math.random() * 40);
-        currentGameColors.push(colorPicker); // account for no doubles??
+            // if (currentGameColors.includes(colorArray[colorPicker])) {
+            //     resetGame();
+            //     startGame(); // attempting to account for doubles: if color    alreadly picked reset and try again
+            // }
+        currentGameColors.push(colorArray[colorPicker]);
+        // console.log(currentGameColors); 
         let $card = $('<div>').addClass('gameCard');
         $card.css('background-color', colorArray[colorPicker]);
+        $('#container').append($card);
     }
 }
 
-const matchCard = () => {
+const matchCardGenerator = () => {
     let matchCardPicker = Math.floor(Math.random() * currentGameColors.length);
+    let roundMatchCard = currentGameColors[matchCardPicker];
+    console.log(roundMatchCard);
     let $matchCard = $('<div>').addClass('matchCard');
         $matchCard.css('background-color', currentGameColors[matchCardPicker]);
+        $('#matchCard').append($matchCard)
 }
+
+const resetGame = () => {
+    $('#container').empty();
+}
+
+startGame();
+matchCardGenerator();
