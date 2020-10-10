@@ -5,6 +5,7 @@ div {
 
 }
 #container {
+    background-color: steelblue;
     width: 70%;
     height: 400px;
     display: flex;
@@ -16,7 +17,7 @@ div {
 
 }
 #hidden {
-    display: none;
+    /* display: none; */
 }
 .gameCard {
     width: 12%;
@@ -27,7 +28,7 @@ div {
 	-webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
 	animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
 }
-.matchCard {
+#currentMatchCard {
     width: 150px;
     height: 150px;
     border-radius: 5%;

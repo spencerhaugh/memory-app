@@ -52,7 +52,14 @@ let colorArray = [
 let currentGameColors = [];
 
 let currentStreak = 0;
+let currentStreakDisplay = document.getElementById('currentStreakDisplay');
+currentStreakDisplay.innerHTML = currentStreak;
 let highScore = 0;
+let highScoreDisplay = document.getElementById('highScoreDisplay'); 
+highScoreDisplay.innerHTML = highScore;
+let guessesRemaining = 3;
+let guessDisplay = document.getElementById('guessesRemainingDisplay')
+guessDisplay.innerHTML = guessesRemaining;
 
 const makeCards = () => {
     
@@ -69,37 +76,54 @@ const startGame = () => {
         // console.log(currentGameColors); 
         let $card = $('<div>').addClass('gameCard');
         $card.css('background-color', colorArray[colorPicker]).addClass(colorArray[colorPicker]);
+        $card.on('click', function(e) {
+            if ($(this).hasClass(roundMatchCard)) { // add listener. Will compare class of $card to roundMatchCard
+                currentStreak += 1;
+                currentStreakDisplay.innerHTML = currentStreak;
+                newRound(); // on correct guess, add to streak and re-deal game board
+            } else {
+                guessesRemaining = guessesRemaining - 1;
+                guessDisplay.innerHTML = guessesRemaining; // on incorrect guess, decrement guessesRemaining
+                $(this).css('background-color', 'steelblue');
+                if (guessesRemaining <= 0) {
+                    gameOver(); // if guessesRemaining = 0, run gameOver sequence
+                }
+            }
+        })
         $('#container').append($card);
     }
 }
 const hideFunction = document.getElementsByClassName('.gameCard');
-// const hideCards = () => {
-
-
-// }
 
 const hideCards = () => {
-    $('.gameCard').attr('id', 'hidden');
+    $('.gameCard').css('background-color', '#222222');
 }
 
+//Match winning card variable
+let roundMatchCard = '';
+//Match winning card generator
 const matchCardGenerator = () => {
     let matchCardPicker = Math.floor(Math.random() * currentGameColors.length);
-    let roundMatchCard = currentGameColors[matchCardPicker];
+    roundMatchCard = currentGameColors[matchCardPicker];
     console.log(roundMatchCard);
-    let $matchCard = $('<div>').addClass('matchCard');
-        $matchCard.css('background-color', currentGameColors[matchCardPicker]);
+    let $matchCard = $('<div>').attr('id', 'currentMatchCard');
+        $matchCard.css('background-color', roundMatchCard).addClass(currentGameColors[matchCardPicker]);
         $('#matchCard').append($matchCard);
-        // $('.gameCard').delay(3000).addClass('hidden');
+        
 }
 
 const resetGame = () => {
     $('#container').empty();
 }
 
+//MAIN GAME FUNCTIONALITY
 startGame();
 matchCardGenerator();
-
-// hideCards();
-setTimeout(function() {
+setTimeout(function() { // Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
     hideCards();
 }, 3200);
+
+
+// Win conditions:
+// jQuery .hasClass to match roundMatchCard if === then add to streak, if !== then remove a guess/life
+// When guesses are used up, game ends. If streak is > highScore then update highScore
