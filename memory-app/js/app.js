@@ -68,9 +68,18 @@ const startGame = () => {
         currentGameColors.push(colorArray[colorPicker]);
         // console.log(currentGameColors); 
         let $card = $('<div>').addClass('gameCard');
-        $card.css('background-color', colorArray[colorPicker]);
+        $card.css('background-color', colorArray[colorPicker]).addClass(colorArray[colorPicker]);
         $('#container').append($card);
     }
+}
+const hideFunction = document.getElementsByClassName('.gameCard');
+// const hideCards = () => {
+
+
+// }
+
+const hideCards = () => {
+    $('.gameCard').attr('id', 'hidden');
 }
 
 const matchCardGenerator = () => {
@@ -79,7 +88,8 @@ const matchCardGenerator = () => {
     console.log(roundMatchCard);
     let $matchCard = $('<div>').addClass('matchCard');
         $matchCard.css('background-color', currentGameColors[matchCardPicker]);
-        $('#matchCard').append($matchCard)
+        $('#matchCard').append($matchCard);
+        // $('.gameCard').delay(3000).addClass('hidden');
 }
 
 const resetGame = () => {
@@ -88,3 +98,8 @@ const resetGame = () => {
 
 startGame();
 matchCardGenerator();
+
+// hideCards();
+setTimeout(function() {
+    hideCards();
+}, 3200);
