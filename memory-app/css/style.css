@@ -32,23 +32,33 @@ div {
     box-shadow: 6px 0px 5px rgba(50, 40, 141, 0.5);
 }
 #currentMatchCard {
-    margin: 5% auto;
+    margin: 0 auto;
     width: 150px;
     height: 150px;
     border-radius: 5%;
+    box-shadow: 6px 0px 5px rgba(50, 40, 141, 0.5);
     transition-property: background-color;
     transition-delay: 2s;
-    transition-timing-function: ease-in;
+    transition-timing-function: ease-in; /* trying to get the card to fade in, and then fade in on a delay... not working yet... */
     -moz-transition-duration: 2s;
 
 }
 aside{
+  display: flex;
   width: 40%;
   height: 130px;
+  margin: 5% auto;
   background-color: steelblue;
   color: #fff;
   font-size: 2em;
   padding: 5px;
+  justify-content: center;
+  flex-direction: column;
+  align-items: flex-end;
+  border-radius: 5px;
+}
+span {
+  color: black;
 }
 
 
