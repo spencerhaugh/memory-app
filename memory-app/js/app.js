@@ -85,6 +85,7 @@ const startGame = () => {
                 guessesRemaining = guessesRemaining - 1;
                 guessDisplay.innerHTML = guessesRemaining; // on incorrect guess, decrement guessesRemaining
                 $(this).css('background-color', 'steelblue');
+                $(this).css('box-shadow', '0px 0px 0px steelblue');
                 if (guessesRemaining <= 0) {
                     gameOver(); // if guessesRemaining = 0, run gameOver sequence
                 }
