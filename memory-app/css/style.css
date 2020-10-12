@@ -1,5 +1,5 @@
 body {
-    background-color: bisque;
+    background-color: rgb(192, 181, 255);
 }
 div {
 
@@ -16,8 +16,17 @@ div {
     justify-content: space-around;
     align-content: space-around;
     align-items: center;
+    border-radius: 5px;
+    box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
 
 }
+
+/* #scoreBox {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+} Trying to get the scoreBox over to the top right of the screen... not working right yet. */
+
 #hidden {
     /* display: none; */
 }
@@ -45,7 +54,7 @@ div {
 }
 aside{
   display: flex;
-  width: 40%;
+  width: 25%;
   height: 130px;
   margin: 5% auto;
   background-color: steelblue;
@@ -54,8 +63,10 @@ aside{
   padding: 5px;
   justify-content: center;
   flex-direction: column;
+  align-content: flex-end;
   align-items: flex-end;
   border-radius: 5px;
+  box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
 }
 span {
   color: black;
