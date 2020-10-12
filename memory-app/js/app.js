@@ -91,7 +91,7 @@ $closeBtn.on('click', closeMessage);
 const startGame = () => {
     $('#container').css('background-color', 'steelblue');
     for (i = 0; i < 18; i++) {
-        let colorPicker = Math.floor(Math.random() * 40);
+        let colorPicker = Math.floor(Math.random() * colorArray.length);
             // if (currentGameColors.includes(colorArray[colorPicker])) {
             //     resetGame();
             //     startGame(); // attempting to account for doubles: if color    alreadly picked reset and try again
@@ -111,7 +111,7 @@ const startGame = () => {
             } else {
                 guessesRemaining = guessesRemaining - 1;
                 guessDisplay.innerHTML = guessesRemaining; // on incorrect guess, decrement guessesRemaining
-                $(this).css('background-color', 'steelblue');
+                $(this).css('background-color', 'steelblue'); // "vanishing tile" inspired by Colt Steele's RGB color game
                 $(this).css('box-shadow', '0px 0px 0px steelblue');
                 if (guessesRemaining <= 0) {
                     gameOver(); // if guessesRemaining = 0, run gameOver sequence
@@ -179,7 +179,7 @@ const gameOver = () => {
 
 
 // ======================
-//MAIN GAME FUNCTIONALITY
+// MAIN GAME FUNCTIONALITY
 // ======================
 
 let gamePlay = () => {
