@@ -61,19 +61,21 @@ currentStreakDisplay.innerHTML = currentStreak;
 let highScore = 0;
 let highScoreDisplay = document.getElementById('highScoreDisplay'); 
 highScoreDisplay.innerHTML = highScore;
-let guessesRemaining = 3;
+let guessesRemaining = 5;
 let guessDisplay = document.getElementById('guessesRemainingDisplay');
 guessDisplay.innerHTML = guessesRemaining;
-let $gameEndMessage = $('#gameEndMessage'); // targeting the end state modal message
-const $closeBtn = $('#close');
+let $resetBtn = $('#resetBtn');
 
 //===============
 // Modal controls
 //===============
+let $gameEndMessage = $('#gameEndMessage'); // targeting the end state modal message
+const $closeBtn = $('#close');
 
 // Close Game Over Message
 const closeMessage = () => {
     $gameEndMessage.css('display', 'none');
+    gamePlay();
 }
 
 $closeBtn.on('click', closeMessage);
@@ -100,8 +102,10 @@ const startGame = () => {
         $card.on('click', function(e) {
             if ($(this).hasClass(roundMatchCard)) { // add listener. Will compare class of $card to roundMatchCard
                 currentStreak += 1;
-                currentStreakDisplay.innerHTML = currentStreak;
-                newRound(); // on correct guess, add to streak and re-deal game board
+                currentStreakDisplay.innerHTML = currentStreak; // display streak
+                guessesRemaining = 5; 
+                guessDisplay.innerHTML = guessesRemaining; // reset guess count
+                gamePlay(); // on correct guess, add to streak and re-deal game board
             } else {
                 guessesRemaining = guessesRemaining - 1;
                 guessDisplay.innerHTML = guessesRemaining; // on incorrect guess, decrement guessesRemaining
@@ -145,16 +149,29 @@ const matchCardGenerator = () => {
 // Reset all params
 const resetGame = () => {
     $('#container').empty();
+    $('#matchCard').empty();
     currentStreak = 0;
-    guessesRemaining = 3;
+    currentStreakDisplay.innerHTML = currentStreak;
+    guessesRemaining = 5;
+    guessDisplay.innerHTML = guessesRemaining;
     highScore = 0;
+    highScoreDisplay.innerHTML = highScore;
+    gamePlay();
 }
+
+$resetBtn.on('click', resetGame);
 
 // when guesses expire, reset streak and guesses, but not high score. Display game over modal message
 const gameOver = () => {
+    if (currentStreak >= highScore) {
+        highScore = currentStreak;
+        highScoreDisplay.innerHTML = highScore;
+    };
     $('#container').empty();
     currentStreak = 0;
-    guessesRemaining = 3;
+    currentStreakDisplay.innerHTML = currentStreak;
+    guessesRemaining = 5;
+    guessDisplay.innerHTML = guessesRemaining;
     $gameEndMessage.css('display', 'block');
 }
 
@@ -163,11 +180,16 @@ const gameOver = () => {
 //MAIN GAME FUNCTIONALITY
 // ======================
 
-startGame();
-matchCardGenerator();
-setTimeout(function() { // Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
-    hideCards();
-}, 3200);
+let gamePlay = () => {
+    $('#container').empty(); // clear play area
+    $('#matchCard').empty(); // clear player match card
+    setTimeout(startGame, 1000);
+    setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
+    hideCards, 4200);
+    setTimeout(matchCardGenerator, 4700);
+}
+
+gamePlay();
 
 
 // Win conditions:
