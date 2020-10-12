@@ -1,9 +1,23 @@
 body {
     background-color: rgb(192, 181, 255);
 }
-div {
-
+#title {
+  font-family: 'Press Start 2P', cursive;
+  font-size: 3em;
+  margin: 0 auto;
+  text-align: center;
 }
+
+#gameBoard {
+  display: flex;
+  margin: 2% auto;
+  width: 95%;
+  background-color: blueviolet;
+  border-radius: 5px;
+  justify-content: space-around;
+  align-items: center;
+}
+
 #container {
     /* position: 0 0 0 15%; */
     margin: 5% auto;
@@ -18,7 +32,13 @@ div {
     align-items: center;
     border-radius: 5px;
     box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
-    transition: all 0.3s;
+    transition: all ease-in 0.3s;
+}
+#matchCard {
+  margin: 0 auto;
+  width: 20%;
+  /* background-color: steelblue; */
+  border-radius: 5px;
 
 }
 
@@ -27,6 +47,7 @@ div {
   flex-direction: column;
   justify-content: flex-end;
 } Trying to get the scoreBox over to the top right of the screen... not working right yet. */
+
 
 
 .gameCard {
@@ -54,12 +75,18 @@ div {
 /* #hidden {
   background-color: #222222;  // id and class do not work to change (show/hide) background of card since style is added by jQuery in the dom level :(
 } */
+#title-bar {
+  display: flex;
+}
+header {
+  margin: 5% auto;
+}
 
 aside{
   display: flex;
   width: 25%;
   height: 130px;
-  margin: 5% auto;
+  margin-left: auto;
   background-color: steelblue;
   color: #fff;
   font-size: 2em;

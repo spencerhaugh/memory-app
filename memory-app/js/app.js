@@ -61,7 +61,7 @@ currentStreakDisplay.innerHTML = currentStreak;
 let highScore = 0;
 let highScoreDisplay = document.getElementById('highScoreDisplay'); 
 highScoreDisplay.innerHTML = highScore;
-let guessesRemaining = 5;
+let guessesRemaining = 10;
 let guessDisplay = document.getElementById('guessesRemainingDisplay');
 guessDisplay.innerHTML = guessesRemaining;
 let $resetBtn = $('#resetBtn');
@@ -104,7 +104,7 @@ const startGame = () => {
             if ($(this).hasClass(roundMatchCard)) { // add listener. Will compare class of $card to roundMatchCard
                 currentStreak += 1;
                 currentStreakDisplay.innerHTML = currentStreak; // display streak
-                guessesRemaining = 5; 
+                guessesRemaining = 10; 
                 guessDisplay.innerHTML = guessesRemaining; // reset guess count
                 $('#container').css('background-color', roundMatchCard);
                 gamePlay(); // on correct guess, add to streak and re-deal game board
@@ -154,7 +154,7 @@ const resetGame = () => {
     $('#matchCard').empty();
     currentStreak = 0;
     currentStreakDisplay.innerHTML = currentStreak;
-    guessesRemaining = 5;
+    guessesRemaining = 10;
     guessDisplay.innerHTML = guessesRemaining;
     highScore = 0;
     highScoreDisplay.innerHTML = highScore;
@@ -172,7 +172,7 @@ const gameOver = () => {
     $('#container').empty();
     currentStreak = 0;
     currentStreakDisplay.innerHTML = currentStreak;
-    guessesRemaining = 5;
+    guessesRemaining = 10;
     guessDisplay.innerHTML = guessesRemaining;
     $gameEndMessage.css('display', 'block');
 }
