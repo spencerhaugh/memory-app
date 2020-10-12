@@ -89,6 +89,7 @@ $closeBtn.on('click', closeMessage);
 
 
 const startGame = () => {
+    $('#container').css('background-color', 'steelblue');
     for (i = 0; i < 18; i++) {
         let colorPicker = Math.floor(Math.random() * 40);
             // if (currentGameColors.includes(colorArray[colorPicker])) {
@@ -105,6 +106,7 @@ const startGame = () => {
                 currentStreakDisplay.innerHTML = currentStreak; // display streak
                 guessesRemaining = 5; 
                 guessDisplay.innerHTML = guessesRemaining; // reset guess count
+                $('#container').css('background-color', roundMatchCard);
                 gamePlay(); // on correct guess, add to streak and re-deal game board
             } else {
                 guessesRemaining = guessesRemaining - 1;

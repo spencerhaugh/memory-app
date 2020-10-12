@@ -18,6 +18,7 @@ div {
     align-items: center;
     border-radius: 5px;
     box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
+    transition: all 0.3s;
 
 }
 
@@ -27,9 +28,7 @@ div {
   justify-content: flex-end;
 } Trying to get the scoreBox over to the top right of the screen... not working right yet. */
 
-#hidden {
-    /* display: none; */
-}
+
 .gameCard {
     width: 12%;
     margin: 1.5%;
@@ -39,6 +38,7 @@ div {
 	  -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
     animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
     box-shadow: 6px 0px 5px rgba(50, 40, 141, 0.5);
+    transition: all 0.3s;
 }
 #currentMatchCard {
     margin: 0 auto;
@@ -50,8 +50,11 @@ div {
     transition-delay: 2s;
     transition-timing-function: ease-in; /* trying to get the card to fade in, and then fade in on a delay... not working yet... */
     -moz-transition-duration: 2s;
-
 }
+/* #hidden {
+  background-color: #222222;  // id and class do not work to change (show/hide) background of card since style is added by jQuery in the dom level :(
+} */
+
 aside{
   display: flex;
   width: 25%;
@@ -67,11 +70,20 @@ aside{
   align-items: flex-end;
   border-radius: 5px;
   box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
-  padding-right: 2%;
+  padding: 10px;
 }
 span {
   color: black;
 }
+/* .highScore {
+  background-color: blueviolet;
+}
+.streak {
+  background-color: blueviolet;
+}
+.guessesRemaining {
+  background-color: blueviolet;
+} */
 
 /* Modal info from our Modal exercise */
 #gameEndMessage {
@@ -111,6 +123,13 @@ h1 {
 	color: white;
 	font-family: 'Arial';
 	cursor: pointer;
+}
+#resetBtn {
+  margin: 5px auto;
+  background-color: red;
+  color: white;
+  padding: 5px;
+  border: none;
 }
 
 
