@@ -49,6 +49,10 @@ let colorArray = [
     '#F8F8FF',
 ];
 
+// ==============
+// game Variables
+// ==============
+
 let currentGameColors = [];
 
 let currentStreak = 0;
@@ -58,12 +62,29 @@ let highScore = 0;
 let highScoreDisplay = document.getElementById('highScoreDisplay'); 
 highScoreDisplay.innerHTML = highScore;
 let guessesRemaining = 3;
-let guessDisplay = document.getElementById('guessesRemainingDisplay')
+let guessDisplay = document.getElementById('guessesRemainingDisplay');
 guessDisplay.innerHTML = guessesRemaining;
+let $gameEndMessage = $('#gameEndMessage'); // targeting the end state modal message
+const $closeBtn = $('#close');
 
-const makeCards = () => {
-    
+//===============
+// Modal controls
+//===============
+
+// Close Game Over Message
+const closeMessage = () => {
+    $gameEndMessage.css('display', 'none');
 }
+
+$closeBtn.on('click', closeMessage);
+//
+
+
+// ===================
+// Game setup functionality: 
+// Creates randomized card for the play area. Add them to an array for the match card to pull from. Listeners added to cards for checking against the Match Card on click
+// ===================
+
 
 const startGame = () => {
     for (i = 0; i < 18; i++) {
@@ -100,6 +121,10 @@ const hideCards = () => {
     $('.gameCard').css('background-color', '#222222');
 }
 
+// ====================
+// Match Card Generator - creates the card the player is looking to match
+// ====================
+
 //Match winning card variable
 let roundMatchCard = '';
 //Match winning card generator
@@ -113,11 +138,31 @@ const matchCardGenerator = () => {
         
 }
 
+// ====================
+// Reset and Game over functions
+// ====================
+
+// Reset all params
 const resetGame = () => {
     $('#container').empty();
+    currentStreak = 0;
+    guessesRemaining = 3;
+    highScore = 0;
 }
 
+// when guesses expire, reset streak and guesses, but not high score. Display game over modal message
+const gameOver = () => {
+    $('#container').empty();
+    currentStreak = 0;
+    guessesRemaining = 3;
+    $gameEndMessage.css('display', 'block');
+}
+
+
+// ======================
 //MAIN GAME FUNCTIONALITY
+// ======================
+
 startGame();
 matchCardGenerator();
 setTimeout(function() { // Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
