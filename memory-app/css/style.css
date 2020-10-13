@@ -1,6 +1,9 @@
 body {
     background-color: rgb(192, 181, 255);
 }
+body * {
+  border: 1px solid gold;
+}
 ul {
   list-style: none;
 }
@@ -17,18 +20,20 @@ ul {
   margin: 0 auto;
   width: 95%;
   background-color: rgba(138, 42, 228, 0.2);
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: space-around;
   align-items: center;
 }
 
 #container {
     /* position: 0 0 0 15%; */
-    margin: 5% auto;
+    margin: 0 auto;
     background-color: steelblue;
     width: 70%;
     height: 400px;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
     justify-content: space-around;
     align-content: space-around;
@@ -42,21 +47,53 @@ ul {
   width: 20%;
   /* background-color: steelblue; */
   border-radius: 5px;
-
 }
+
+
+/* Trying to add titles above the game board and match card (aka space for my tooltips) */
+
+#gameTitles {
+  display: flex;
+  margin: 0 auto;
+  width: 95%;
+  background-color: rgba(138, 42, 228, 0.2);
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+#containerTitle {
+  /* position: 0 0 0 15%; */
+  margin: 0 auto;
+  background-color: steelblue;
+  /* box-shadow: 6px 6px 5px rgba(50, 40, 141, .8); */
+  /* border-radius: 5px; */
+  width: 70%;
+  height: 40px;
+}
+
+#matchCardTitle {
+  margin: 0 auto;
+  width: 20%;
+  height: 40px;
+}
+
+
 
 /* #scoreBox {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  align-items: flex-end;
 } Trying to get the scoreBox over to the top right of the screen... not working right yet. */
-
 
 
 .gameCard {
     width: 12%;
+    max-width: 100px;
     margin: 1.5%;
-    height: 100px;
+    height: 20%;
+    max-height: 100px;
     border-radius: 50%;
     /* animation code from Animista, details below in keyframes */
 	  -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
@@ -66,8 +103,10 @@ ul {
 }
 #currentMatchCard {
     margin: 0 auto;
-    width: 150px;
-    height: 150px;
+    width: 50%;
+    max-width: 150px;
+    height: 10em;
+    max-height: 150px;
     border-radius: 5%;
     box-shadow: 6px 0px 5px rgba(50, 40, 141, 0.5);
     transition-property: background-color;
@@ -92,7 +131,6 @@ header {
 aside{
   display: flex;
   width: 25%;
-  height: 130px;
   margin-left: auto;
   /* background-color: steelblue; */
   color: #000;
@@ -146,7 +184,7 @@ span {
 	text-align: right;
 }
 h1 {
-	padding-bottom: 15px;
+	
 }
 .modal-buttons {
 	padding: 14px 18px;
@@ -158,8 +196,14 @@ h1 {
 	font-family: 'Arial';
 	cursor: pointer;
 }
-#resetBtn {
+button {
   margin: 0 auto;
+  display: inline-block;
+  width: 50%;
+  min-width: 50px;
+
+}
+#resetBtn {
   background-color: red;
   color: white;
   padding: 5px;
