@@ -2,9 +2,9 @@ body {
     background-color: rgb(192, 181, 255);
 }
 
-body * {
+/* body * {
   border: 1px solid gold;
-}
+} */
 
 ul {
   list-style: none;
