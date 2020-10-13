@@ -6,9 +6,10 @@ body * {
 }
 ul {
   list-style: none;
+  text-align: right;
+  font-size: 0.5em;
 }
 #title {
-  font-family: 'Press Start 2P', cursive;
   font-size: 3em;
   margin: 0 auto;
   text-align: center;
@@ -19,7 +20,7 @@ ul {
   display: flex;
   margin: 0 auto;
   width: 95%;
-  background-color: rgba(138, 42, 228, 0.2);
+  background-color: rgb(192, 181, 255);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -56,16 +57,17 @@ ul {
   display: flex;
   margin: 0 auto;
   width: 95%;
-  background-color: rgba(138, 42, 228, 0.2);
+  background-color: rgb(192, 181, 255);
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: flex-start;
   align-items: center;
+  color: rgba(255, 255, 255, .5);
 }
 #containerTitle {
   /* position: 0 0 0 15%; */
   margin: 0 auto;
-  background-color: steelblue;
+  /* background-color: steelblue; */
   /* box-shadow: 6px 6px 5px rgba(50, 40, 141, .8); */
   /* border-radius: 5px; */
   width: 70%;
@@ -86,6 +88,7 @@ ul {
   justify-content: flex-end;
   align-items: flex-end;
 } Trying to get the scoreBox over to the top right of the screen... not working right yet. */
+/* Changed these divs to a ul with li's and it's working better. Easier to align. */
 
 
 .gameCard {
@@ -120,9 +123,11 @@ ul {
 #title-bar {
   background-color: rgb(245, 128, 245);
   width: 95%;
+  font-family: 'Press Start 2P', cursive;
   margin: 0 auto;
   display: flex;
   justify-content: space-around;
+  border-radius: 5px;
 }
 header {
   margin: 5% auto;
@@ -183,8 +188,8 @@ span {
 #gameEnd-footer {
 	text-align: right;
 }
-h1 {
-	
+h2 {
+	text-align: center;
 }
 .modal-buttons {
 	padding: 14px 18px;
