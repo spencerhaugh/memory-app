@@ -17,9 +17,9 @@
         <aside>
             <div id='scoreBox'>
                 <ul>
-                    <li class='highScore'>High Score: <span id='highScoreDisplay'></span></li>
-                    <li class='streak'>Streak: <span id='currentStreakDisplay'></span></li>
-                    <li class ='guessesRemaining'>Guesses: <span id='guessesRemainingDisplay'></span></li>
+                    <li class='highScore'>High Score: <span class='scoreboard' id='highScoreDisplay'></span></li>
+                    <li class='streak'>Streak: <span class='scoreboard' id='currentStreakDisplay'></span></li>
+                    <li class ='guessesRemaining'>Guesses: <span class='scoreboard' id='guessesRemainingDisplay'></span></li>
                 </ul>
 
                 
@@ -31,10 +31,16 @@
     </div>
     <div id='gameTitles'>
         <div id='containerTitle'>
-            <h4 id='gameCardToolTip'>What's this?</h4>
+            <div class='tooltip'>
+                <h4 id='gameCardToolTip'>What's this?</h4>
+                <span class='tooltipText'>Watch these circles carefully and remember where the colors are before they disappear!</span>
+            </div>
         </div>
         <div id='matchCardTitle'>
-            <h4 id='matchCardToolTip'>What's this?</h4>
+            <div class='tooltip'>
+                <h4 id='matchCardToolTip'>What's this?</h4>
+                <span class='tooltipText'>This is the color you need to find among the hidden colors!</span>
+            </div>
         </div>
     </div>
     <div id='gameBoard'>
