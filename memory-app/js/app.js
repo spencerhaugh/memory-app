@@ -157,6 +157,7 @@ const resetGame = () => {
     guessDisplay.innerHTML = guessesRemaining;
     highScore = 0;
     highScoreDisplay.innerHTML = highScore;
+    currentGameColors = [];
     gamePlay();
 }
 
@@ -173,6 +174,7 @@ const gameOver = () => {
     currentStreakDisplay.innerHTML = currentStreak;
     guessesRemaining = 10;
     guessDisplay.innerHTML = guessesRemaining;
+    currentGameColors = [];
     $gameEndMessage.css('display', 'block');
 }
 
@@ -184,6 +186,7 @@ const gameOver = () => {
 let gamePlay = () => {
     $('#container').empty(); // clear play area
     $('#matchCard').empty(); // clear player match card
+    currentGameColors = []; // cleear array of possible winning cards
     setTimeout(startGame, 1000);
     setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
     hideCards, 4200);

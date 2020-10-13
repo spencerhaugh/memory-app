@@ -49,8 +49,12 @@ ul {
 }
 #matchCard {
   margin: 0 auto;
+  background-color: steelblue;
   width: 20%;
+  height: 400px;
   border-radius: 5px;
+  box-shadow: 6px 6px 5px rgba(50, 40, 141, .8);
+  transition: all ease-in 0.3s;
 }
 
 /* ========= TOOL TIP TARGET ELEMENTS ========= */
@@ -80,16 +84,16 @@ ul {
 }
 
 
-/* ========= ROUND BY ROUND VARIABLES ========= */
+/* ========= ROUND BY ROUND CARDS/VARIABLES ========= */
 /* these are the elements that will be generated each round by the script */
 
 .gameCard {
     width: 12%;
     max-width: 100px;
     margin: 1.5%;
-    height: 20%;
+    height: 25%;
     max-height: 100px;
-    border-radius: 50%;
+    border-radius: 5%;
     /* animation code from Animista, details below in keyframes */
 	  -webkit-animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
     animation: flip-horizontal-bottom 0.4s cubic-bezier(0.455, 0.030, 0.515, 0.955) 3s both;
@@ -97,7 +101,7 @@ ul {
     transition: all 0.3s;
 }
 #currentMatchCard {
-    margin: 0 auto;
+    margin: 50% auto;
     width: 50%;
     max-width: 150px;
     height: 10em;
@@ -195,7 +199,7 @@ h2 {
 /* ========= BUTTONS ========= */
 
 button {
-  margin: 0 auto;
+  margin-left: auto;
   display: inline-block;
   width: 50%;
   min-width: 50px;
@@ -204,6 +208,12 @@ button {
 #resetBtn {
   background-color: red;
   color: white;
+  padding: 5px;
+  border: none;
+}
+#howToBtn {
+  background-color: white;
+  color: black;
   padding: 5px;
   border: none;
 }
