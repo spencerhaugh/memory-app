@@ -60,7 +60,7 @@ currentStreakDisplay.innerHTML = currentStreak;
 let highScore = 0;
 let highScoreDisplay = document.getElementById('highScoreDisplay'); 
 highScoreDisplay.innerHTML = highScore;
-let guessesRemaining = 10;
+let guessesRemaining = 8;
 let guessDisplay = document.getElementById('guessesRemainingDisplay');
 guessDisplay.innerHTML = guessesRemaining;
 let $resetBtn = $('#resetBtn');
@@ -137,7 +137,7 @@ const startGame = () => {
             if ($(this).hasClass(roundMatchCard)) { // add listener. Will compare class of $card to roundMatchCard
                 currentStreak += 1;
                 currentStreakDisplay.innerHTML = currentStreak; // display streak
-                guessesRemaining = 10; 
+                guessesRemaining = 8; 
                 guessDisplay.innerHTML = guessesRemaining; // reset guess count
                 $('#container').css('background-color', roundMatchCard);
                 gamePlay(); // on correct guess, add to streak and re-deal game board
@@ -190,7 +190,7 @@ const resetGame = () => {
     $('#matchCard').empty();
     currentStreak = 0;
     currentStreakDisplay.innerHTML = currentStreak;
-    guessesRemaining = 10;
+    guessesRemaining = 8;
     guessDisplay.innerHTML = guessesRemaining;
     highScore = 0;
     highScoreDisplay.innerHTML = highScore;
@@ -209,7 +209,7 @@ const gameOver = () => {
     $('#container').empty();
     currentStreak = 0;
     currentStreakDisplay.innerHTML = currentStreak;
-    guessesRemaining = 10;
+    guessesRemaining = 8;
     guessDisplay.innerHTML = guessesRemaining;
     currentGameColors = [];
     $gameEndMessage.css('display', 'block');
@@ -224,7 +224,7 @@ let gamePlay = () => {
     $('#matchCard').empty(); // clear player match card
     $('#container').delay(800).empty(); // clear play area //can't get delay to work (want h2 in the container html to remain briefly)
     currentGameColors = []; // clear array of possible winning cards
-    setTimeout(startGame, 1500);
+    setTimeout(startGame, 1400);
     setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
     hideCards, 4700);
     setTimeout(matchCardGenerator, 5200);
