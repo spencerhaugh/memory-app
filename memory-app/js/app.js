@@ -65,6 +65,7 @@ let guessDisplay = document.getElementById('guessesRemainingDisplay');
 guessDisplay.innerHTML = guessesRemaining;
 let $resetBtn = $('#resetBtn');
 
+
 //===============
 // Modal controls
 //===============
@@ -91,6 +92,27 @@ const closeStart = () => {
 }
 
 $startGameBtn.on('click', closeStart);
+
+
+// How to play pop up message
+let $howToMessage = $('#howToMessage'); // targeting the how-to modal
+let $howToBtn = $('#howToBtn');
+
+const howToPlay = () => {
+    $howToMessage.css('display', 'block');
+}
+
+$howToBtn.on('click', howToPlay);
+
+// Close HowTo message
+const $howToCloseBtn = $('#howToCloseBtn');
+
+const howToClose = () => {
+    $howToMessage.css('display', 'none');
+}
+
+
+$howToCloseBtn.on('click', howToClose);
 
 
 // ===================
@@ -199,9 +221,9 @@ const gameOver = () => {
 // ======================
 
 let gamePlay = () => {
-    $('#container').empty(); // clear play area
     $('#matchCard').empty(); // clear player match card
-    currentGameColors = []; // cleear array of possible winning cards
+    $('#container').delay(800).empty(); // clear play area //can't get delay to work (want h2 in the container html to remain briefly)
+    currentGameColors = []; // clear array of possible winning cards
     setTimeout(startGame, 1500);
     setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
     hideCards, 4700);
