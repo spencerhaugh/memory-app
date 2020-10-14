@@ -364,9 +364,6 @@ button {
 
 /* =========== Responsivness ============ */
 @media (max-width: 1200px) {
-  li {
-    font-size: 14px;
-  }
   #currentMatchCard {
     height: 9em;
   }
@@ -374,9 +371,6 @@ button {
 }
 
 @media (max-width: 1090px) {
-  li {
-    font-size: 12px;
-  }
   #currentMatchCard {
     height: 7em;
   }
@@ -431,5 +425,25 @@ button {
   }
   #currentMatchCard {
     height: 4em;
+  }
+}
+@media (max-width: 400px) {
+  #container {
+    height: 220px;
+  }
+  #matchCard {
+    height: 220px;
+  }
+  #currentMatchCard {
+    height: 4em;
+  }
+  #title {
+    font-size: 1.17em;
+  }
+  h2 {
+    font-size: 1em;
+  }
+  button {
+    font-size: 0.25em;
   }
 }
