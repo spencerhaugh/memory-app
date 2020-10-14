@@ -446,4 +446,7 @@ button {
   button {
     font-size: 0.25em;
   }
+  .tooltip h4 {
+    font-size: 1em;
+  }
 }
