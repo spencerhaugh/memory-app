@@ -24,6 +24,12 @@ li {
   color: white;
 }
 
+#resultMessage {
+  color: #ffffff;
+  display: none;
+  transition: all ease-in 0.3s;
+}
+
 /* ========= MAIN ELEMENTS ========= */
 
 #gameBoard {
@@ -160,7 +166,7 @@ aside{
 /* ========= MODALS ========= */
 /* Modal info from our Modal exercise */
 
-#gameEndMessage {
+.modalGameMessage {
 	font-family: Arial, Helvetica, sans-serif;
 	background-color: rgba(0, 0, 0, .4);
 	position: fixed;
@@ -172,7 +178,7 @@ aside{
 	overflow: auto; /* If overflow is clipped, a scroll-bar should be added to see the rest of the content*/
 	display: none; /*Set this to `none` so that the modal does not show initially on page load.*/
 }
-#gameEnd-textbox {
+.modal-textbox {
 	background-color: white;
 	height: 350px;
 	width: 550px;
@@ -182,7 +188,7 @@ aside{
 	padding: 2%;
 	line-height: 120%;
 }
-#gameEnd-footer {
+.modal-footer {
 	text-align: right;
 }
 h2 {
@@ -198,7 +204,7 @@ h2 {
 	font-family: 'Arial';
 	cursor: pointer;
 }
-#gameEnd-textbox h1 {
+.modal-textbox h1 {
   font-family: 'Press Start 2P', cursive;
 }
 

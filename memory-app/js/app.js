@@ -68,8 +68,9 @@ let $resetBtn = $('#resetBtn');
 //===============
 // Modal controls
 //===============
+// Game end pop up
 let $gameEndMessage = $('#gameEndMessage'); // targeting the end state modal message
-const $closeBtn = $('#close');
+const $closeBtn = $('#endGameClose');
 
 // Close Game Over Message
 const closeMessage = () => {
@@ -78,7 +79,18 @@ const closeMessage = () => {
 }
 
 $closeBtn.on('click', closeMessage);
-//
+
+// Game start pop up
+let $gameStartMessage = $('#gameStartMessage'); // targeting the game start modal
+const $startGameBtn = $('#startGameClose');
+
+// Close start game message
+const closeStart = () => {
+    $gameStartMessage.css('display', 'none');
+    gamePlay();
+}
+
+$startGameBtn.on('click', closeStart);
 
 
 // ===================
@@ -196,7 +208,12 @@ let gamePlay = () => {
     setTimeout(matchCardGenerator, 5200);
 }
 
-gamePlay();
+const launchGame = () => {
+    $gameStartMessage.css('display', 'block');
+}
+
+
+launchGame();
 
 
 // Win conditions:
