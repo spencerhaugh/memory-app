@@ -222,11 +222,11 @@ const gameOver = () => {
 
 let gamePlay = () => {
     $('#matchCard').empty(); // clear player match card
-    $('#container').delay(800).empty(); // clear play area //can't get delay to work (want h2 in the container html to remain briefly)
+    $('#container').empty(); // clear play area //can't get delay to work (want h2 in the container html to remain briefly)
     currentGameColors = []; // clear array of possible winning cards
     setTimeout(startGame, 1400);
     setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
-    hideCards, 4700);
+    hideCards, 4600);
     setTimeout(matchCardGenerator, 5200);
 }
 
