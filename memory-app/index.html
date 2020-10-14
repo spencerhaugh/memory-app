@@ -17,9 +17,19 @@
         <aside>
             <div id='scoreBox'>
                 <ul>
-                    <li class='highScore'>High Score: <span class='scoreboard' id='highScoreDisplay'></span></li>
-                    <li class='streak'>Streak: <span class='scoreboard' id='currentStreakDisplay'></span></li>
-                    <li class ='guessesRemaining'>Guesses: <span class='scoreboard' id='guessesRemainingDisplay'></span></li>
+                    <div class='tooltip'>
+                        <li class='scoreboard'>SCOREBOARD:</li>
+                        <li class='highScore'>High Score: <span class='scoreboard' id='highScoreDisplay'></span></li>
+                        <span class='tooltipScoreboard'>This is the best you've done!</span>
+                    </div>
+                    <div class='tooltip'>
+                        <li class='streak'>Streak: <span class='scoreboard' id='currentStreakDisplay'></span></li>
+                        <span class='tooltipScoreboard'>This is your current win streak!</span>
+                    </div>
+                    <div class='tooltip'>
+                        <li class ='guessesRemaining'>Guesses: <span class='scoreboard' id='guessesRemainingDisplay'></span></li>
+                        <span class='tooltipScoreboard'>This is how many gueeses are left!</span>
+                    </div>
                 </ul>
 
                 

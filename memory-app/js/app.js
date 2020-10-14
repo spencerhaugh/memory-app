@@ -122,6 +122,9 @@ const startGame = () => {
 }
 const hideFunction = document.getElementsByClassName('.gameCard');
 
+// ====================
+// Flip cards
+// ====================
 const hideCards = () => {
     $('.gameCard').css('background-color', '#222222');
 }
@@ -187,10 +190,10 @@ let gamePlay = () => {
     $('#container').empty(); // clear play area
     $('#matchCard').empty(); // clear player match card
     currentGameColors = []; // cleear array of possible winning cards
-    setTimeout(startGame, 1000);
+    setTimeout(startGame, 1500);
     setTimeout(// Set timeout researched on w3schools, after I failed to make jQuery .delay() (that we used in jQuery Magic homework) accomplish what I was looking for...
-    hideCards, 4200);
-    setTimeout(matchCardGenerator, 4700);
+    hideCards, 4700);
+    setTimeout(matchCardGenerator, 5200);
 }
 
 gamePlay();
