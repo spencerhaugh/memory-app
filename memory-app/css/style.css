@@ -36,6 +36,7 @@ li {
   display: flex;
   margin: 0 auto;
   width: 95%;
+  height: 400px;
   background-color: rgb(153, 218, 248);
   flex-direction: row;
   flex-wrap: wrap;
@@ -47,7 +48,7 @@ li {
     margin: 0 auto;
     background-color: steelblue;
     width: 70%;
-    height: 400px;
+    height: 100%;
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -62,7 +63,7 @@ li {
   margin: 0 auto;
   background-color: steelblue;
   width: 20%;
-  height: 400px;
+  height: 100%;
   border-radius: 5px;
   box-shadow: 6px 6px 5px rgba(50, 40, 141, .6);
   transition: all ease-in 0.3s;
@@ -75,6 +76,7 @@ li {
   display: flex;
   margin: 0 auto;
   width: 95%;
+  height: 40px;
   background-color: rgb(153, 218, 248);
   flex-direction: row;
   flex-wrap: wrap;
@@ -85,13 +87,13 @@ li {
 #containerTitle {
   margin: 0 auto;
   width: 70%;
-  height: 40px;
+  height: 100%;
 }
 
 #matchCardTitle {
   margin: 0 auto;
   width: 20%;
-  height: 40px;
+  height: 100%;
 }
 
 
@@ -146,7 +148,7 @@ aside{
   box-sizing: border-box;
   display: flex;
   width: 35%;
-  margin-left: auto;
+  /* margin-left: auto; */
   color: #000;
   font-size: 2em;
   justify-content: flex-start;
@@ -211,7 +213,7 @@ button {
   margin-left: auto;
   display: inline-block;
   width: 50%;
-  min-width: 50px;
+  /* min-width: 50px; */
 
 }
 #resetBtn {
@@ -371,11 +373,8 @@ button {
   li {
     font-size: 11px;
   }
-  #container {
-    height: 330px;
-  }
-  #matchCard {
-    height: 330px;
+  #gameBoard{
+    height: 380px;
   }
   .gameCard {
     width: 12%;
@@ -390,9 +389,21 @@ button {
   #currentMatchCard {
     height: 6em;
   }
+  #gameTitles {
+    height: 20px;
+  }
+  .tooltip h4 {
+    font-size: 0.9em;
+  }
+  #gameTitles {
+    height: 35px;
+  }
 
 }
 @media (max-width: 825px) {
+  #gameBoard {
+    height: 370px;
+  }
   li {
     font-size: 10px;
   }
@@ -407,17 +418,25 @@ button {
   #howToBtn {
     font-size: 0.4em;
   }
+  .tooltip h4 {
+    font-size: 0.85em;
+  }
+  #gameTitles {
+    height: 30px;
+  }
 }
 
 @media (max-width: 650px) {
+  #gameBoard {
+    height: 350px;
+  }
+  aside {
+    width: 45%;
+    padding: 5px;
+    margin-left: 0;
+  }
   li {
     font-size: 8px;
-  }
-  #container {
-    height: 280px;
-  }
-  #matchCard {
-    height: 280px;
   }
   #currentMatchCard {
     height: 4em;
@@ -428,8 +447,14 @@ button {
   #howToBtn {
     font-size: 0.2em;
   }
+  .tooltip h4 {
+    font-size: 0.75em;
+  }
+  #gameTitles {
+    height: 28px;
+  }
 }
-@media (max-width: 400px) {
+/* @media (max-width: 550px) {
   #container {
     height: 220px;
   }
@@ -453,5 +478,64 @@ button {
   }
   .tooltip h4 {
     font-size: 0.75em;
+  }
+} */
+@media (max-width: 450px) {
+  #gameBoard {
+    height: 460px;
+    flex-direction: column-reverse;
+    justify-content: flex-end;
+  }
+  /* #title-bar {
+    flex-direction: column;
+  } */
+  header {
+    width: 55%;
+  }
+  aside {
+    /* align-content: flex-start; */
+    width: 45%;
+    padding: 5px;
+    font-size: .15em;
+    /* margin-left: 0; */
+  }
+  #container {
+    height: 460px;
+  }
+  #matchCard {
+    height: 150px;
+  }
+  #currentMatchCard {
+    height: 4em;
+    width: 66%;
+  }
+  .gameCard {
+    width: 45%;
+    height: 9%;
+  }
+  #title {
+    font-size: 1em;
+  }
+  h2 {
+    font-size: 0.7em;
+  }
+  #resetBtn {
+    font-size: 0.15em;
+    padding: 2px;
+  }
+  #howToBtn {
+    font-size: 0.15em;
+    padding: 2px;
+  }
+  .tooltip h4 {
+    font-size: 0.35em;
+  }
+  ul {
+    text-align: left;
+    padding-right: 30px;
+    padding-bottom: 5px;
+  }
+  #gameTitles {
+    height: 20px;
   }
 }
