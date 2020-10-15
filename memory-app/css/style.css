@@ -183,6 +183,10 @@ aside{
 	padding: 2%;
 	line-height: 120%;
 }
+.modal-textbox p {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
 .modal-footer {
 	text-align: right;
 }
@@ -448,6 +452,6 @@ button {
     font-size: 0.15em;
   }
   .tooltip h4 {
-    font-size: 1em;
+    font-size: 0.75em;
   }
 }
