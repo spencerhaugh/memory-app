@@ -13,7 +13,7 @@ Requirements:
 * App must have 1 or more complex user interface module
 * App must have game functionality (win/lose)
 
-### The Approach
+## The Approach
 
 My goal for this project was to keep it simple, while focusing on creating a complete package: Something that was fun & challenging, but would also look great and be intuitive. The focus was on making the gameplay smooth, and making the player experience as good as possible.
 
@@ -21,7 +21,7 @@ I approched these goals by leaning on amimations and modals, and keeping the bul
 
 I would need an array of colors to choose from, a way to compare the winning element color to the selected element, a way to keep track of results, and I would need to be able reset and regenerate everything each round.
 
-### Technologies Used
+## Technologies Used
 
 The .js file has a few key elements, and houses the bulk of the game elements and logic. I used a jQuery and a for loop to create the game cards pulling colors from an array of hex codes.  I also assigned this hex code as a class to each div. I would use this class to compare for the win condition, as the background-color assigned would change when the cards flipped/were hidden. The loop also deposited the selected colors for the round into a seperate array, so that the winning color would be pulled from this array of colors "in use".
 
@@ -37,15 +37,15 @@ Tooltips were added thoughout the game board to help explain various elements, i
 Modals were added to update the player on the results of the game, as well as to setup the game on initial page load, and via a "How To Play" button.
 
 
-### Bug Hunting!
+## Bug Hunting!
 
 Setting the background-color from an array of set colors was necessary since using random colors would have resulted in colors too similar. But because background-color was set at the element level, that meant "hiding" the cards could not be done by CSS, and required an additional jQuery .css element-level update. This made creating the win condition very tricky! I could not simply compare backgound-colors, as I did not have a "history" of them.
-I ended up add the hex code as a class as well when the div was created and comparing the classes for win condition.
+I ended up adding the hex code as a class as well when the div was created and comparing the classes for win condition.
 
-I was well into the project, and was surprised by how hard the game was! Too hard... something was suspicious. I eventually discovered that my code was not clearing the array of 18 colors used each round to pull the "winning" color from. So I was getting rounds that the winning color didn't even exist on the game board! A quick line of code later, and gameplay got so much less frustrating!
+I was well into the project, and was surprised by how hard the game was! Too hard... something was suspicious. I eventually discovered that my code was not clearing the array of 18 colors used each round to pull the "winning" color from. So I was getting rounds that the winning color didn't even exist on the game board! A quick line of code later, (line 218 in .js) and gameplay got so much less frustrating!
 
 
-### Unsolved Problems
+## Unsolved Problems
 
 One unsolved bug is that if the RESET button is clicked mid-game load it can cause some strange glitches, including dual winning cards, and sometimes extra game tiles. Probably due to the timing/delays in the function executions during setup.
 
@@ -53,7 +53,7 @@ Another issue was working with background-colors. Since they were being set by j
 
 I was not able to avoid choosing multiples of the same color for the game board cards. Because the array was limited (40 colors) the chances of a loop getting 18 uniques by chance was, well it was impossible. The code broke the game! So, duplicates are possible on the game board, and my work-around was to reduce the total number of guesses the player had to compensate.
 
-### Improvements To Make
+## Improvements To Make
 
 I would love to figure out more interactivity, like the hover effect discribed above. 
 

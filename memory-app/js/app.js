@@ -1,4 +1,6 @@
-// Available color options:
+//===============
+// Available color options
+//===============
 let colorArray = [
     '#DC143C',
     '#FF69B4',
@@ -110,10 +112,11 @@ $howToCloseBtn.on('click', howToClose);
 
 
 // ===================
-// Game setup functionality: 
-// Creates randomized card for the play area. Add them to an array for the match card to pull from. Listeners added to cards for checking against the Match Card on click
+// Game setup logic: 
 // ===================
-
+// Creates randomized card for the play area. 
+// Adds them to an array for the match card to pull from. 
+// Listeners added to cards for checking against the Match Card on click
 
 const startGame = () => {
     $('#container').css('background-color', 'steelblue');
@@ -147,7 +150,7 @@ const startGame = () => {
 const hideFunction = document.getElementsByClassName('.gameCard');
 
 // ====================
-// Flip cards
+// Flip/Hide cards
 // ====================
 const hideCards = () => {
     $('.gameCard').css('background-color', '#222222');
@@ -171,10 +174,10 @@ const matchCardGenerator = () => {
 }
 
 // ====================
-// Reset and Game over functions
+// Reset and Game over logic
 // ====================
 
-// Reset all params
+// Reset button resets all params
 const resetGame = () => {
     $('#container').empty();
     $('#matchCard').empty();
@@ -190,7 +193,7 @@ const resetGame = () => {
 
 $resetBtn.on('click', resetGame);
 
-// when guesses expire, reset streak and guesses, but not high score. Display game over modal message
+// When guesses expire, reset streak and guesses, but not high score. Display game over modal message
 const gameOver = () => {
     if (currentStreak >= highScore) {
         highScore = currentStreak;
