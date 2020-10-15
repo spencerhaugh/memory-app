@@ -1,10 +1,4 @@
-// console.log('connected!')
-
-// BASIC GAME SETUP:
-// create colorArray
-// create startGame() to create game cards (18 cards, each with a random color from colorArray[], and also populate the currentGameColors array with these choices)
-// create consts for highScore and currentStreak
-
+// Available color options:
 let colorArray = [
     '#DC143C',
     '#FF69B4',
@@ -125,10 +119,6 @@ const startGame = () => {
     $('#container').css('background-color', 'steelblue');
     for (i = 0; i < 18; i++) {
         let colorPicker = Math.floor(Math.random() * colorArray.length);
-            // if (currentGameColors.includes(colorArray[colorPicker])) {
-            //     resetGame();
-            //     startGame(); // attempting to account for doubles: if color    alreadly picked reset and try again
-            // }
         currentGameColors.push(colorArray[colorPicker]);
         // console.log(currentGameColors); 
         let $card = $('<div>').addClass('gameCard');
@@ -215,7 +205,6 @@ const gameOver = () => {
     $gameEndMessage.css('display', 'block');
 }
 
-
 // ======================
 // MAIN GAME FUNCTIONALITY
 // ======================
@@ -234,10 +223,4 @@ const launchGame = () => {
     $gameStartMessage.css('display', 'block');
 }
 
-
 launchGame();
-
-
-// Win conditions:
-// jQuery .hasClass to match roundMatchCard if === then add to streak, if !== then remove a guess/life
-// When guesses are used up, game ends. If streak is > highScore then update highScore

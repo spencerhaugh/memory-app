@@ -2,10 +2,6 @@ body {
     background-color: rgb(153, 218, 248);
 }
 
-/* body * {
-  border: 1px solid gold;
-} */
-
 ul {
   list-style: none;
   text-align: right;
@@ -129,10 +125,6 @@ li {
     transition-timing-function: ease-in; /* trying to get the card to fade in, and then fade in on a delay... not working yet... */
     -moz-transition-duration: 2s;
 }
-/* #hidden {
-  background-color: #222222;  // id and class do not work to change (show/hide) background of card since style is added by jQuery in the dom level :(
-} */
-
 
 /* ========= SCOREBOARD ========= */
 /* Game title/header section (includes scoreboard) */
@@ -159,8 +151,6 @@ aside{
   font-size: 2em;
   justify-content: flex-start;
   flex-direction: column;
-  /* align-content: flex-end; */
-  /* align-items: center; */
   border-radius: 5px;
   padding: 10px;
 }
@@ -251,7 +241,7 @@ button {
  * animation flip-horizontal-bottom
  * ----------------------------------------
  */
- @-webkit-keyframes flip-horizontal-bottom {
+@-webkit-keyframes flip-horizontal-bottom {
     0% {
       -webkit-transform: rotateX(0);
               transform: rotateX(0);
@@ -261,16 +251,6 @@ button {
               transform: rotateX(-180deg);
     }
   }
-  /* @keyframes flip-horizontal-bottom {
-    0% {
-      -webkit-transform: rotateX(0);
-              transform: rotateX(0);
-    }
-    100% {
-      -webkit-transform: rotateX(-180deg);
-              transform: rotateX(-180deg);
-    }
-  } */
   
   /* ========= TOOL TIPS ============= */
   /* All tooltip research, information, some starting off code from: */
@@ -366,7 +346,7 @@ button {
   opacity: 1;
 }
 
-/* =========== Responsivness ============ */
+/* =========== Responsivness / Media Queries ============ */
 @media (max-width: 1200px) {
   #currentMatchCard {
     height: 9em;
