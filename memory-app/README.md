@@ -3,6 +3,7 @@
 ## Don't Forget! - A Memory App
 
 This is my submission for Project One in the General Assembly Software Engineering Immersive. 
+
 Requirements:
 * Built with HTML, CSS, Javascript, & jQuery
 * Hosted on Github pages
