@@ -1,0 +1,23 @@
+<%- include('partials/head') %>
+
+<h1>Budgetr All</h1>
+<div class='container'>
+    <table>
+        <% for (let line of budget) { %>
+            <tr>
+                <td><%= line.date %> </td> 
+                <td><a href="budget/<%= budget.indexOf(line) %>"><%= line.name %> </a></td> 
+                <td><%= line.amount %> </td> 
+            </tr>
+        <% } %>
+    </table>
+</div>
+<div>
+    <a href="budget/new">
+        <button>Add New</button>
+    </a>
+</div>
+
+
+
+<%- include('partials/foot') %> 

@@ -1,0 +1,27 @@
+<%- include('partials/head') %>
+
+<% let lineKeys = Object.keys(line) %> 
+<% let lineValues = Object.values(line) %> 
+
+<h1><%= line.name %></h1>
+
+<div class='container'>
+    
+    <table>
+        <% for (let i =0; i < lineKeys.length; i++) { %>
+            <tr>
+                <td><b><%= lineKeys[i].toUpperCase() %>:</b></td>  
+                <td><%= lineValues[i] %> </td>  
+            </tr>
+        <% } %>
+    </table>
+
+</div>
+<hr>
+
+<a href="/budget">
+<button>Back To Budget</button>
+</a>
+
+
+<%- include('partials/foot') %> 
