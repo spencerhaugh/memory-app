@@ -1,6 +1,6 @@
-# Project One
+# Don't Forget! - A Memory App
 
-## Don't Forget! - A Memory App
+## Project 1: Software Engineering Immersive 9-21
 
 This is my submission for Project One in the General Assembly Software Engineering Immersive. Week 3 of my journey learning to program!
 
