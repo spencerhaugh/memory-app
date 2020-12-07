@@ -2,7 +2,7 @@
 
 ## Don't Forget! - A Memory App
 
-This is my submission for Project One in the General Assembly Software Engineering Immersive. 
+This is my submission for Project One in the General Assembly Software Engineering Immersive. Week 3 of my journey learning to program!
 
 Requirements:
 * Built with HTML, CSS, Javascript, & jQuery
@@ -12,6 +12,9 @@ Requirements:
 * App must implement responsive design
 * App must have 1 or more complex user interface module
 * App must have game functionality (win/lose)
+
+This was a great exercise in creating logic and redering, and was a significant challenge as a beginning programmer with 3 weeks of experience.
+I did not rely on any CSS frameworks to style the app, as I wanted to continue to develop and flex my CSS skill.
 
 ## The Approach
 
@@ -23,14 +26,16 @@ I would need an array of colors to choose from, a way to compare the winning ele
 
 ## Technologies Used
 
-The .js file has a few key elements, and houses the bulk of the game elements and logic. I used a jQuery and a for loop to create the game cards pulling colors from an array of hex codes.  I also assigned this hex code as a class to each div. I would use this class to compare for the win condition, as the background-color assigned would change when the cards flipped/were hidden. The loop also deposited the selected colors for the round into a seperate array, so that the winning color would be pulled from this array of colors "in use".
+This app is heavily reliant on jQuery to manipulate the DOM, and create a color-based memory game. 
+
+The app.js file has a few key elements, and houses the bulk of the game elements and logic. I used a jQuery and a for loop to create the game cards pulling colors from an array of hex codes.  I also assigned this hex code as a class to each div. I would use this class to compare for the win condition, as the background-color assigned would change when the cards flipped/were hidden. The loop also deposited the selected colors for the round into a seperate array, so that the winning color would be pulled from this array of colors "in use".
 
 I used the loop to attach event listeners on each card which were connected to a function that would compare the selected card on click to the winning card by using the .hasClass method to check if the selected card had the same class as the winning card.
 
 If the guess was correct the function would increment the streak variable which is displayed on the scoreboard area of the app, and then run a function to clear the board and create new cards.
 If the guess was incorrect, the function would decrement the guesses left variable, and change the cards background-color to match the game board, effectively making it "disappear". I set transitions in the CSS to make this transition a smooth fade.
 
-I used setTimeout A LOT to get th flow of information correct, such as not generating a match card until the game cards were hidden, and the hiding of the game cards after the flip animation.
+I used setTimeout A LOT to get the flow of information correct, such as not generating a match card until the game cards were hidden, and the hiding of the game cards after the flip animation.
 
 Tooltips were added thoughout the game board to help explain various elements, including all aspects of the scoreboard.
 
@@ -42,7 +47,7 @@ Modals were added to update the player on the results of the game, as well as to
 Setting the background-color from an array of set colors was necessary since using random colors would have resulted in colors too similar. But because background-color was set at the element level, that meant "hiding" the cards could not be done by CSS, and required an additional jQuery .css element-level update. This made creating the win condition very tricky! I could not simply compare backgound-colors, as I did not have a "history" of them.
 I ended up adding the hex code as a class as well when the div was created and comparing the classes for win condition.
 
-I was well into the project, and was surprised by how hard the game was! Too hard... something was suspicious. I eventually discovered that my code was not clearing the array of 18 colors used each round to pull the "winning" color from. So I was getting rounds that the winning color didn't even exist on the game board! A quick line of code later, (line 218 in .js) and gameplay got so much less frustrating!
+I was well into the project, and was surprised by how hard the game was! Too hard... something was suspicious. I eventually discovered that my code was not clearing the array of 18 colors used each round to pull the "winning" color from. So I was getting rounds that the winning color didn't even exist on the game board! A quick line of code later, (line 218 in app.js) and gameplay got so much less frustrating!
 
 
 ## Unsolved Problems
