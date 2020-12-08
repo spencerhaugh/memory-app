@@ -4,6 +4,8 @@
 
 This is my submission for Project One in the General Assembly Software Engineering Immersive. Week 3 of my journey learning to program!
 
+Deployed on GithubPages: [Don't Forget - Memory App](https://spencerhaugh.github.io/memory-app/)
+
 Requirements:
 * Built with HTML, CSS, Javascript, & jQuery
 * Hosted on Github pages
@@ -14,7 +16,7 @@ Requirements:
 * App must have game functionality (win/lose)
 
 This was a great exercise in creating logic and redering, and was a significant challenge as a beginning programmer with 3 weeks of experience.
-I did not rely on any CSS frameworks to style the app, as I wanted to continue to develop and flex my CSS skill.
+I did not rely on any CSS frameworks (Bootstrap, etc) to style the app, as I wanted to continue to develop my CSS & Front-end design skills.
 
 ## The Approach
 
